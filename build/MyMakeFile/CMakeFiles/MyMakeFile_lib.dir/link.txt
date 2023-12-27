@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMyMakeFile_lib.a CMakeFiles/MyMakeFile_lib.dir/makefile.cpp.o
+/usr/bin/ranlib libMyMakeFile_lib.a

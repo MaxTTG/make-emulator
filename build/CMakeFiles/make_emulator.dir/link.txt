@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -rdynamic CMakeFiles/make_emulator.dir/main.cpp.o -o make_emulator  MyMakeFile/libMyMakeFile_lib.a 
