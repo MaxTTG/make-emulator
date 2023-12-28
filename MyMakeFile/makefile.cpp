@@ -44,19 +44,30 @@ MakeFile MakeFile::file_read(const std::string &path) {
 }
 
 bool MakeFile::hasCycle() const {
-    std::unordered_set<std::string> visited;
-    std::stack<std::pair<std::string, std::string>> dfsStack;
+    std::unordered_set<std::string> visited, inStack;
+    std::stack<std::string> dfsStack;
+    for (const auto& target : targets) {
+        if (visited.count(target.first))
+            continue;
+        dfsStack.push(target.first);
 
-    dfsStack.push({targets.begin()->first, ""});
-    while (!dfsStack.empty()) {
-        auto [cur, prev] = dfsStack.top(); dfsStack.pop();
-        if (visited.count(cur))
-            return true;
-        
-        visited.insert(cur);
-        for (const auto& next : targets.at(cur).first)
-            if (next != prev)
-                dfsStack.push({next, prev});
+        while (!dfsStack.empty()) {
+            auto cur = dfsStack.top();
+            if (!visited.count(cur)) {
+                visited.insert(cur);
+                inStack.insert(cur);
+            } else {
+                inStack.erase(cur);
+                dfsStack.pop();
+            }
+
+            for (const auto& next : targets.at(cur).first) {
+                if (!visited.count(next))
+                    dfsStack.push(next);
+                else if (inStack.count(next))
+                    return true;
+            }
+        }
     }
     return false;
 }
