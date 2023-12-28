@@ -1,5 +1,9 @@
 #include "makefile.h"
 
+MakeFile::MakeFile(const MakeFile &mf) : targets(mf.targets), done(mf.done) {}
+
+MakeFile::MakeFile(const std::string & path) { *this = file_read(path); }
+
 MakeFile MakeFile::file_read(const std::string &path) {
     MakeFile makefile;
 
@@ -32,34 +36,34 @@ MakeFile MakeFile::file_read(const std::string &path) {
                 throw std::runtime_error("Existence of an undefined dependency" + ref);
 
     // Checking for cycled referencies
-    std::unordered_set<std::string> v, s;
-    for (auto& t : makefile.targets) {
-        std::string start = t.first;
-        if (!v.count(start) && makefile.dfs(start, v, s))
-            throw std::runtime_error("Cycled refs: " + start);
-    }
+    if (makefile.hasCycle())
+        throw std::runtime_error("Cycled refs");
 
     fin.close();
     return makefile;
 }
 
-bool MakeFile::dfs(const std::string &target, std::unordered_set<std::string> &v, std::unordered_set<std::string>& s) const {
-    v.insert(target);
-    s.insert(target);
-    const auto& deps = targets.at(target).first;
-    for (const auto& dep : deps) {
-        if (!v.count(dep)) {
-            if (dfs(dep, v, s))
-                return true;
-        } else if (s.count(dep))
+bool MakeFile::hasCycle() const {
+    std::unordered_set<std::string> visited;
+    std::stack<std::pair<std::string, std::string>> dfsStack;
+
+    dfsStack.push({targets.begin()->first, ""});
+    while (!dfsStack.empty()) {
+        auto [cur, prev] = dfsStack.top(); dfsStack.pop();
+        if (visited.count(cur))
             return true;
+        
+        visited.insert(cur);
+        for (const auto& next : targets.at(cur).first)
+            if (next != prev)
+                dfsStack.push({next, prev});
     }
-    s.erase(target);
     return false;
 }
 
 
-void MakeFile::build(const std::string& target) {
+void MakeFile::build(const std::string &target)
+{
     auto t = targets.find(target);
     if (t == targets.end())
         throw std::invalid_argument("Target not found: " + target);

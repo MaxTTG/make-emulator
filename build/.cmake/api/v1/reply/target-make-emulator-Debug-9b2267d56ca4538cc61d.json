@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "make_emulator"
+			"path" : "make-emulator"
 		}
 	],
 	"backtrace" : 1,
@@ -26,19 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 7,
+				"line" : 4,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 16,
+				"line" : 13,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 14,
+				"line" : 11,
 				"parent" : 0
 			}
 		]
@@ -56,7 +56,7 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/root/make_emulator/MyMakeFile"
+					"path" : "/root/make-emulator/MyMakeFile"
 				}
 			],
 			"language" : "CXX",
@@ -73,7 +73,7 @@
 			"id" : "MyMakeFile_lib::@d3f79cba731b2bb60482"
 		}
 	],
-	"id" : "make_emulator::@6890427a1f51a3e7e1df",
+	"id" : "make-emulator::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -94,8 +94,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "make_emulator",
-	"nameOnDisk" : "make_emulator",
+	"name" : "make-emulator",
+	"nameOnDisk" : "make-emulator",
 	"paths" : 
 	{
 		"build" : ".",

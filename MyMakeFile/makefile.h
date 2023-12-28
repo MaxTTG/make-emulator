@@ -5,22 +5,24 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <stack>
 #include <unordered_map>
 #include <unordered_set>
 
 class MakeFile {
 public:
     MakeFile() = default;
-
-    static MakeFile file_read(const std::string& path);
+    MakeFile(const MakeFile& mf);
+    MakeFile(const std::string& path);
 
     void build(const std::string& target);
 
 private:
-    bool dfs(const std::string& target, std::unordered_set<std::string>& v, std::unordered_set<std::string>& s) const;
+    bool hasCycle() const;
+    static MakeFile file_read(const std::string& path);
 
-    typedef std::vector<std::string> dependencies;
-    typedef std::vector<std::string> actions;
+    using dependencies = std::vector<std::string>;
+    using actions = std::vector<std::string>;
     std::unordered_map<std::string, std::pair<dependencies, actions>> targets;
     std::unordered_set<std::string> done;
 };

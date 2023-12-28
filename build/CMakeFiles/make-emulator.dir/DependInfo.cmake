@@ -8,11 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/make-emulator/MyMakeFile/makefile.cpp" "MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/makefile.cpp.o" "gcc" "MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/makefile.cpp.o.d"
+  "/root/make-emulator/main.cpp" "CMakeFiles/make-emulator.dir/main.cpp.o" "gcc" "CMakeFiles/make-emulator.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/root/make-emulator/build/MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

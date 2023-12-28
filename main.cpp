@@ -1,11 +1,9 @@
 #include <iostream>
-#include <fstream>
-#include <map>
+#include <string>
 #include "makefile.h"
 
 int main() {
     std::string make, file, target;
-    std::map<std::string, MakeFile> mfiles;
     while (true) {
         try {
             std::cin >> make;
@@ -19,9 +17,9 @@ int main() {
                 std::cout << "Input format: \"make /path/to/file/ target\"" << std::endl;
                 continue;
             }
-            mfiles[file] = MakeFile::file_read(file);
+            MakeFile mfile(file);
             std::cin >> target;
-            mfiles[file].build(target);
+            mfile.build(target);
         } catch(std::exception& e) {
             std::cerr << "ERROR: " << e.what() << std::endl;
             break;

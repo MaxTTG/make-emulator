@@ -14,22 +14,6 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "BZRCOMMAND",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
 			"name" : "CMAKE_ADDR2LINE",
 			"properties" : 
 			[
@@ -83,7 +67,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/root/make_emulator/build"
+			"value" : "/root/make-emulator/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -165,10 +149,6 @@
 			"name" : "CMAKE_CTEST_COMMAND",
 			"properties" : 
 			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
 				{
 					"name" : "HELPSTRING",
 					"value" : "Path to ctest program executable."
@@ -623,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/root/make_emulator"
+			"value" : "/root/make-emulator"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -867,7 +847,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "make_emulator"
+			"value" : "make-emulator"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1530,38 +1510,6 @@
 			"value" : "5"
 		},
 		{
-			"name" : "CVSCOMMAND",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CVS_UPDATE_OPTIONS",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
 			"name" : "DART_TESTING_TIMEOUT",
 			"properties" : 
 			[
@@ -1576,38 +1524,6 @@
 			],
 			"type" : "STRING",
 			"value" : "1500"
-		},
-		{
-			"name" : "GITCOMMAND",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "HGCOMMAND",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
 		},
 		{
 			"name" : "MAKECOMMAND",
@@ -1658,6 +1574,42 @@
 			"value" : ""
 		},
 		{
+			"name" : "MuMakeFile_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/root/make-emulator/build/MyMakeFile"
+		},
+		{
+			"name" : "MuMakeFile_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "MuMakeFile_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/root/make-emulator/MyMakeFile"
+		},
+		{
 			"name" : "MyMakeFile_BINARY_DIR",
 			"properties" : 
 			[
@@ -1667,7 +1619,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/root/make_emulator/build/MyMakeFile"
+			"value" : "/root/make-emulator/build/MyMakeFile"
 		},
 		{
 			"name" : "MyMakeFile_IS_TOP_LEVEL",
@@ -1691,23 +1643,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/root/make_emulator/MyMakeFile"
-		},
-		{
-			"name" : "P4COMMAND",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
+			"value" : "/root/make-emulator/MyMakeFile"
 		},
 		{
 			"name" : "SITE",
@@ -1726,23 +1662,7 @@
 			"value" : "DESKTOP-Q05OREO"
 		},
 		{
-			"name" : "SVNCOMMAND",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "make_emulator_BINARY_DIR",
+			"name" : "make-emulator_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1751,10 +1671,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/root/make_emulator/build"
+			"value" : "/root/make-emulator/build"
 		},
 		{
-			"name" : "make_emulator_IS_TOP_LEVEL",
+			"name" : "make-emulator_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1766,7 +1686,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "make_emulator_SOURCE_DIR",
+			"name" : "make-emulator_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1775,7 +1695,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/root/make_emulator"
+			"value" : "/root/make-emulator"
 		}
 	],
 	"kind" : "cache",

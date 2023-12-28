@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/make_emulator
+CMAKE_SOURCE_DIR = /root/make-emulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/make_emulator/build
+CMAKE_BINARY_DIR = /root/make-emulator/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /root/make_emulator/build
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /root/make_emulator/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /root/make-emulator/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,22 +78,12 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /root/make_emulator/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /root/make_emulator/build/CPackSourceConfig.cmake
+	cd /root/make-emulator/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /root/make-emulator/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
 package_source/fast: package_source
 .PHONY : package_source/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -117,14 +107,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/make_emulator/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/make_emulator/build/CMakeFiles /root/make_emulator/build/MyMakeFile//CMakeFiles/progress.marks
-	cd /root/make_emulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyMakeFile/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/make_emulator/build/CMakeFiles 0
+	cd /root/make-emulator/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/make-emulator/build/CMakeFiles /root/make-emulator/build/MyMakeFile//CMakeFiles/progress.marks
+	cd /root/make-emulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyMakeFile/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/make-emulator/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/make_emulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyMakeFile/clean
+	cd /root/make-emulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyMakeFile/clean
 .PHONY : clean
 
 # The main clean target
@@ -133,22 +123,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/make_emulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyMakeFile/preinstall
+	cd /root/make-emulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyMakeFile/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/make_emulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyMakeFile/preinstall
+	cd /root/make-emulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyMakeFile/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/make_emulator/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/make-emulator/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/rule:
-	cd /root/make_emulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/rule
+	cd /root/make-emulator/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/rule
 .PHONY : MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/rule
 
 # Convenience name for target.
@@ -157,7 +147,7 @@ MyMakeFile_lib: MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/rule
 
 # fast build rule for target.
 MyMakeFile_lib/fast:
-	cd /root/make_emulator/build && $(MAKE) $(MAKESILENT) -f MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/build.make MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/build
+	cd /root/make-emulator/build && $(MAKE) $(MAKESILENT) -f MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/build.make MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/build
 .PHONY : MyMakeFile_lib/fast
 
 makefile.o: makefile.cpp.o
@@ -165,7 +155,7 @@ makefile.o: makefile.cpp.o
 
 # target to build an object file
 makefile.cpp.o:
-	cd /root/make_emulator/build && $(MAKE) $(MAKESILENT) -f MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/build.make MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/makefile.cpp.o
+	cd /root/make-emulator/build && $(MAKE) $(MAKESILENT) -f MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/build.make MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/makefile.cpp.o
 .PHONY : makefile.cpp.o
 
 makefile.i: makefile.cpp.i
@@ -173,7 +163,7 @@ makefile.i: makefile.cpp.i
 
 # target to preprocess a source file
 makefile.cpp.i:
-	cd /root/make_emulator/build && $(MAKE) $(MAKESILENT) -f MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/build.make MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/makefile.cpp.i
+	cd /root/make-emulator/build && $(MAKE) $(MAKESILENT) -f MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/build.make MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/makefile.cpp.i
 .PHONY : makefile.cpp.i
 
 makefile.s: makefile.cpp.s
@@ -181,7 +171,7 @@ makefile.s: makefile.cpp.s
 
 # target to generate assembly for a file
 makefile.cpp.s:
-	cd /root/make_emulator/build && $(MAKE) $(MAKESILENT) -f MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/build.make MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/makefile.cpp.s
+	cd /root/make-emulator/build && $(MAKE) $(MAKESILENT) -f MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/build.make MyMakeFile/CMakeFiles/MyMakeFile_lib.dir/makefile.cpp.s
 .PHONY : makefile.cpp.s
 
 # Help Target
@@ -194,7 +184,6 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... MyMakeFile_lib"
 	@echo "... makefile.o"
 	@echo "... makefile.i"
@@ -210,6 +199,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/make_emulator/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/make-emulator/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

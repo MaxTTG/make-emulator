@@ -1,4 +1,4 @@
-# Install script for directory: /root/make_emulator
+# Install script for directory: /root/make-emulator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/root/make_emulator/build/MyMakeFile/cmake_install.cmake")
+  include("/root/make-emulator/build/MyMakeFile/cmake_install.cmake")
 
 endif()
 
@@ -56,5 +56,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/root/make_emulator/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/root/make-emulator/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

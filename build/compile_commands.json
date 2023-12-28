@@ -1,12 +1,12 @@
 [
 {
-  "directory": "/root/make_emulator/build",
-  "command": "/usr/bin/g++  -I/root/make_emulator/MyMakeFile -g -o CMakeFiles/make_emulator.dir/main.cpp.o -c /root/make_emulator/main.cpp",
-  "file": "/root/make_emulator/main.cpp"
+  "directory": "/root/make-emulator/build",
+  "command": "/usr/bin/g++  -I/root/make-emulator/MyMakeFile -g -o CMakeFiles/make-emulator.dir/main.cpp.o -c /root/make-emulator/main.cpp",
+  "file": "/root/make-emulator/main.cpp"
 },
 {
-  "directory": "/root/make_emulator/build/MyMakeFile",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/MyMakeFile_lib.dir/makefile.cpp.o -c /root/make_emulator/MyMakeFile/makefile.cpp",
-  "file": "/root/make_emulator/MyMakeFile/makefile.cpp"
+  "directory": "/root/make-emulator/build/MyMakeFile",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/MyMakeFile_lib.dir/makefile.cpp.o -c /root/make-emulator/MyMakeFile/makefile.cpp",
+  "file": "/root/make-emulator/MyMakeFile/makefile.cpp"
 }
 ]
