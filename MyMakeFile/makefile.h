@@ -24,7 +24,6 @@ private:
     using dependencies = std::vector<std::string>;
     using actions = std::vector<std::string>;
     std::unordered_map<std::string, std::pair<dependencies, actions>> targets;
-    std::unordered_set<std::string> done;
 };
 
 #endif // MAKEFILE_H

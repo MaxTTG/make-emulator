@@ -1,6 +1,6 @@
 #include "makefile.h"
 
-MakeFile::MakeFile(const MakeFile &mf) : targets(mf.targets), done(mf.done) {}
+MakeFile::MakeFile(const MakeFile &mf) : targets(mf.targets) {}
 
 MakeFile::MakeFile(const std::string & path) { *this = file_read(path); }
 
@@ -73,20 +73,37 @@ bool MakeFile::hasCycle() const {
 }
 
 
-void MakeFile::build(const std::string &target)
-{
+void MakeFile::build(const std::string &target){
     auto t = targets.find(target);
     if (t == targets.end())
         throw std::invalid_argument("Target not found: " + target);
-
-    for (const auto& dep : t->second.first)
-        build(dep);
     
-    if (done.count(target))
-        return;
+    std::unordered_set<std::string> visited;
+    std::stack<std::pair<std::string, std::pair<dependencies, actions>>> dfsStack;
+    dfsStack.push({target, targets[target]});
 
-    std::cout << t->first << ':' << std::endl;
-    for (const auto& act : t->second.second)
-        std::cout << act << std::endl;
-    done.insert(target);
+    while (!dfsStack.empty()) {
+        auto [cur_target, cur_deps] = dfsStack.top(); dfsStack.pop();
+
+        if (visited.count(cur_target))
+            continue;
+        
+        bool flag = true;
+        for (const auto& dep : cur_deps.first)
+            flag &= visited.count(dep);
+
+        if (flag) {
+            visited.insert(cur_target);
+            std::cout << cur_target << ':' << std::endl;
+            for (const auto& act : cur_deps.second)
+                std::cout << act << std::endl;
+            continue;
+        }
+
+        dfsStack.push({cur_target, cur_deps});
+        // C++20 -> use reverse_view
+        // C++17 (cur) -> rbegin and rend
+        for (auto it = cur_deps.first.rbegin(); it != cur_deps.first.rend(); ++it)
+            dfsStack.push({*it, targets[*it]});
+    }
 }
